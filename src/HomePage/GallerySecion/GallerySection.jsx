@@ -2,7 +2,7 @@
 const GallerySection = () => {
     return (
         <div>
-            this is gallery
+           <h1 className="text-center text-5xl text-rose-400 font-bold">Gallery</h1>
         </div>
     );
 };

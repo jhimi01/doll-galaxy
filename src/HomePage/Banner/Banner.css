@@ -1,0 +1,15 @@
+.banner-wave{
+   
+        --size: 50px;
+        --p: 25px;
+        --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
+        
+        height: 200px;
+      
+        -webkit-mask:
+          radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),#fddcd5 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+          radial-gradient(var(--R) at 50% calc(100% + var(--p)),#0000 99%,#fddcd5 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+        background:linear-gradient(90deg,#fddcd5,#fddcd5);  
+        border: none;
+   
+}
