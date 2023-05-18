@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../assets/login.svg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthPrvider/AuthProvider';
 const Register = () => {
 
+    let navigate = useNavigate();
     const [error, setError] = useState('')
     const [success, setSeccess] = useState('')
     const { singupEmailPass, loginWithGoogleAuth } = useContext(AuthContext)
-
+    let from = '/';
     const handleRegistration = (e) => {
       e.preventDefault();
       const form = e.target;
@@ -16,6 +17,7 @@ const Register = () => {
       const password = form.password.value;
       const url = form.url.value;
       console.log(name, email, password, url);
+      
 
       singupEmailPass(email, password)
       .then(result => {
@@ -24,6 +26,7 @@ const Register = () => {
         form.reset()
         setSeccess('registered successfully')
         setError('')
+        navigate(from, {replace: true})
       }).catch(error => {
     const errorMessage = error.message;
     setError(errorMessage)
@@ -41,6 +44,7 @@ const Register = () => {
             console.log(user)
             setSeccess('registered successfully')
             setError('')
+            navigate(from, {replace: true})
           }).catch(error => {
         const errorMessage = error.message;
         setError(errorMessage)

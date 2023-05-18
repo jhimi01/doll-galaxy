@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from '../../assets/login.svg'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthPrvider/AuthProvider";
@@ -7,6 +7,9 @@ const Login = () => {
     const { loginemailpass, loginWithGoogleAuth } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSeccess] = useState('')
+    let navigate = useNavigate();
+    let location = useLocation()
+    let from = location.state?.from?.pathname || '/';
 
     const handlelogin=(e)=>{
         e.preventDefault();
@@ -24,6 +27,7 @@ const Login = () => {
           form.reset()
           setSeccess('logged in successfully')
           setError('')
+          navigate(from, { replace: true });
         }).catch(error => {
       const errorMessage = error.message;
       setError(errorMessage)
@@ -39,6 +43,7 @@ const Login = () => {
             console.log(user)
             setSeccess('registered successfully')
             setError('')
+            navigate(from, { replace: true });
           }).catch(error => {
         const errorMessage = error.message;
         setError(errorMessage)
