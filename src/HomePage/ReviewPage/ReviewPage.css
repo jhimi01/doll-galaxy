@@ -1,0 +1,5 @@
+.shadow-div{
+    background-color: #f1f1f1; /* Replace with your desired background color */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.233); /* Adjust the shadow properties */
+  
+}

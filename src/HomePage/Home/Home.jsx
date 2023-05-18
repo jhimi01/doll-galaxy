@@ -1,17 +1,15 @@
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import GallerySection from "../GallerySecion/GallerySection";
+import ReviewPage from "../ReviewPage/ReviewPage";
 import ShopCategory from "../ShopCategory/ShopCategory";
-import SliderLogo from "../Sliderlogo/SliderLogo";
+
 
 const Home = () => {
     return (
         <div>
           <div>
           <Banner></Banner>
-          </div>
-          <div>
-            <SliderLogo></SliderLogo>
           </div>
           <div>
             <About></About>
@@ -21,6 +19,9 @@ const Home = () => {
            </div>
            <div>
             <ShopCategory></ShopCategory>
+           </div>
+           <div className="bg-[#fddcd5] py-20">
+            <ReviewPage></ReviewPage>
            </div>
 
         </div>
