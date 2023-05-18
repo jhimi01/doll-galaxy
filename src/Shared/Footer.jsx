@@ -5,7 +5,7 @@ import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 const Footer = () => {
     return (
         <>
-            <footer className="footer mt-10 p-10 bg-base-200 text-base-content">
+            <footer className="footer mt-10 p-10 bg-rose-100 text-base-content">
   <div>
     <span className="footer-title">Services</span> 
     <a className="link link-hover">Branding</a> 
@@ -27,7 +27,7 @@ const Footer = () => {
     <a className="link link-hover">Cookie policy</a>
   </div>
 </footer> 
-<footer className="footer px-7 py-2 border-t bg-base-200 text-base-content border-base-300">
+<footer className="footer px-7 py-2 border-t bg-rose-100 text-base-content border-base-300">
   <div className="items-center grid-flow-col">
   <img src={logo} className='h-20 w-20' alt="logo" />
     <p>ACME Industries Ltd. <br/>Providing reliable tech since 1992</p>

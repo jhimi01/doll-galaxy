@@ -2,7 +2,7 @@ import './ReviewPage.css'
 
 const ReviewPage = () => {
     return (
-        <div className="carousel w-2/3 py-9 mx-auto shadow-div">
+        <div className="carousel w-2/3 py-9 mx-auto shadow-div" data-aos="zoom-in">
   <div id="slide1" className="carousel-item relative w-full ">
     
     <div className="w-full flex items-center justify-center flex-col px-20">
