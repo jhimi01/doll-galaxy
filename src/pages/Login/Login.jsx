@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthPrvider/AuthProvider";
 
 const Login = () => {
-    const { loginemailpass } = useContext(AuthContext)
+    const { loginemailpass, loginWithGoogleAuth } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSeccess] = useState('')
 
@@ -22,7 +22,7 @@ const Login = () => {
           const user = result.user;
           console.log(user)
           form.reset()
-          setSeccess('registered successfully')
+          setSeccess('logged in successfully')
           setError('')
         }).catch(error => {
       const errorMessage = error.message;
@@ -31,6 +31,25 @@ const Login = () => {
       console.log(errorMessage)
         });
     }
+
+    const handleGoogle =()=>{
+        loginWithGoogleAuth()
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+            setSeccess('registered successfully')
+            setError('')
+          }).catch(error => {
+        const errorMessage = error.message;
+        setError(errorMessage)
+        setSeccess('')
+        console.log(errorMessage)
+          });
+    }
+
+
+
+
     return (
         <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
@@ -61,6 +80,9 @@ const Login = () => {
                {success && <p className='text-green-800'>{success}</p>}
                </div>
             </form>
+            <div className="divider">OR</div>
+            <button onClick={handleGoogle} className="btn btn-secondary" >Login with Google</button>
+            <input type="submit" value='' />
                <p>Are you new here? <Link to='/register'><span className='underline'>Register</span></Link></p>
              </div>
            </div>

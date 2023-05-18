@@ -6,7 +6,7 @@ const Register = () => {
 
     const [error, setError] = useState('')
     const [success, setSeccess] = useState('')
-    const { singupEmailPass } = useContext(AuthContext)
+    const { singupEmailPass, loginWithGoogleAuth } = useContext(AuthContext)
 
     const handleRegistration = (e) => {
       e.preventDefault();
@@ -33,6 +33,21 @@ const Register = () => {
 
 
     };
+
+    const handleGoogle =()=>{
+        loginWithGoogleAuth()
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+            setSeccess('registered successfully')
+            setError('')
+          }).catch(error => {
+        const errorMessage = error.message;
+        setError(errorMessage)
+        setSeccess('')
+        console.log(errorMessage)
+          });
+    }
 
 
 
@@ -79,6 +94,8 @@ const Register = () => {
         {success && <p className='text-green-800'>{success}</p>}
         </div>
      </form>
+     <div className="divider">OR</div>
+            <button onClick={handleGoogle} className="btn btn-secondary" >Login with Google</button>
         <p>Do you have an account? <Link to='/login'><span className='underline'>Login</span></Link></p>
       </div>
     </div>
