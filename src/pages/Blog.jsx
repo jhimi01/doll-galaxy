@@ -1,7 +1,7 @@
 
 const Blog = () => {
     return (
-        <div className="pt-32 px-10 -mt-20 bg-[#fddcd5] h-[100vh]">
+        <div className="py-28 px-10 -mt-20 bg-[#fddcd5] h-full">
              <div
         tabIndex={0}
         style={{borderRadius: 0}}
@@ -12,9 +12,12 @@ const Blog = () => {
         What is an access token and refresh token? How do they work and where should we store them on the client-side?
         </div>
         <div className="collapse-content">
-          <p className="text-xl">Uncontrolled components are form inputs that are handled by the DOM. In other words, their values are not controlled by React, but by the browser. The value of an uncontrolled component is set by the user input directly on the DOM, and to retrieve the value, you need to query the DOM using JavaScript. Uncontrolled components are easier to set up and manage, but they can lead to unpredictable behavior because the state of the component is not managed by React.
-<br /> <br />
-Controlled components, on the other hand, are form inputs that are fully controlled by React. The value of a controlled component is set and managed by React, rather than the browser. When the user interacts with a controlled component, React updates the value in its own state, and this state is then used to update the component. Controlled components provide a more predictable behavior, as you have full control over the state of the component.</p>
+          <p className="text-xl">A refresh token is a special token that is issued to you by a website or application after you successfully log in. It serves as a proof that you have already verified your identity. 
+<br />
+The access token is re-issued, provided the refresh token is a valid one requesting permission to access confidential resources.</p>
+<p>Refresh tokens work as part of an authentication system that involves multiple components, including the client-side (usually a web or mobile application) and the server-side (the backend or authentication server) <br />Refresh tokens can be stored in the clients local storage. However, this approach can be vulnerable to XSS attacks since JavaScript can access the contents of local storage.</p>
+
+<p>When considering where to store access tokens, it is important to balance security and convenience. Using HTTP-only cookies is generally recommended for storing access tokens, as it provides a higher level of security compared to storing tokens in local storage or session storage, which can be vulnerable to XSS attacks.</p>
         </div>
       </div>
       <div
@@ -27,16 +30,10 @@ Controlled components, on the other hand, are form inputs that are fully control
         Compare SQL and NoSQL databases?
         </div>
         <div className="collapse-content">
-          <p className="text-xl">There are many types of Prop Validation. <br />
-          any : The prop can be of any data type. <br />
-bool : The prop should be a Boolean. <br />
-number : The prop should be a number.   <br />
-string : The prop should be a string. <br />
-func : The prop should be a function. <br />
-array : The prop should be an array. <br />
-object : The prop should be an object. <br />
-<br />
- PropTypes is a built-in library in React that allows you to specify the type and shape of props that a component should receive. This helps you catch errors early by validating the props that are being passed to a component at runtime.</p>
+          <p className="text-xl">SQL databases, also known as relational databases, organize data into structured tables with predefined schemas.
+They follow a strict structure and use a fixed schema that defines the columns, data types, and relationships between tables.</p>
+          <p className="text-xl">NoSQL databases, which stands for not only SQL, provide a flexible and scalable way to store and retrieve data.
+They do not rely on fixed schemas and allow data to be stored in various formats like key-value pairs, documents, or graphs..</p>
         </div>
       </div>
       <div
@@ -49,8 +46,9 @@ object : The prop should be an object. <br />
         What is express js? What is Nest JS?
         </div>
         <div className="collapse-content">
-          <p className="text-xl">Node.js provides a JavaScript runtime that can be used to build server-side applications.Node.js provides a set of core modules that can be used to build server-side applications.Node.js can be used to build any type of server-side application, including web, mobile, and desktop applications.Node.js is low-level and requires more configuration to build a complete application. <br /> <br />
-          Express.js is a web application framework that provides additional features to simplify the process of building web applications on top of Node.js.Express.js, on the other hand, provides additional features such as routing, middleware, and templating.Express.js, however, is primarily used for building web applications.Express.js provides an abstraction layer on top of Node.js, making it easier to build web applications.
+          <p className="text-xl">Express.js is a minimalistic and lightweight web framework for Node.js, which is a JavaScript runtime environment.
+It provides a simple and flexible set of features for building web applications and APIs. <br /> <br />Nest.js is a full-featured, opinionated web framework for building scalable and maintainable server-side applications using TypeScript or JavaScript.
+It is built on top of Express.js and leverages its features while adding its own abstractions and additional functionality.
           </p>
         </div>
       </div>
@@ -64,8 +62,8 @@ object : The prop should be an object. <br />
         What is MongoDB aggregate and how does it work?
         </div>
         <div className="collapse-content">
-          <p className="text-xl">In React, a custom hook is a JavaScript function that uses React hooks (such as useState, useEffect, useContext, etc.) to provide a certain behavior or functionality that can be shared across multiple components. Custom hooks allow developers to extract reusable logic from components and promote code reuse and maintainability. <br />
-          Custom hooks can be created to handle various tasks, such as managing form state, implementing infinite scrolling, fetching data from an API, or handling authentication. By creating a custom hook, you can encapsulate complex logic into a reusable function and make it available to multiple components without repeating the same code over and over again.
+          <p className="text-xl">In MongoDB, the aggregate function is a powerful tool that allows you to perform advanced data analysis and transformation operations on your data. It provides a way to process multiple documents within a collection and apply various stages of data manipulation to retrieve aggregated results.<br />
+          By utilizing the aggregate function and its stages, you can perform complex queries and aggregations in MongoDB, making it a flexible tool for advanced data analysis and transformation operations on your data.
           </p>
         </div>
       </div>
