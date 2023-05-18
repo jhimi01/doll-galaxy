@@ -60,10 +60,15 @@ const Navigationbar = () => {
         </div>
       </div>
     </div>
+    <div className="tooltip tooltip-right" data-tip={user?.displayName}>
     {user ? <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-         {user?.photoURL ? <img src={user?.photoURL} /> : <img src='https://i.ibb.co/nkydWsQ/download.png' />}
+         {user?.photoURL ? 
+          
+          <img src={user?.photoURL} />
+
+         : <img src='https://i.ibb.co/nkydWsQ/download.png' />}
         </div>
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
@@ -78,6 +83,7 @@ const Navigationbar = () => {
       </ul>
     </div> : <Link to='/login'><button className="btn btn-secondary ">LogIn</button></Link>}
 
+</div>
 
   </div>
         </div>
