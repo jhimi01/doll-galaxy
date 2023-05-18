@@ -5,15 +5,15 @@ const ShopCategory = () => {
      // Define your categories and sub-categories
      const categories = [
         {
-          name: 'Math Toys',
+          name: 'baby dolls',
           subCategories: ['Algebra', 'Geometry', 'Puzzles'],
         },
         {
-          name: 'Language Toys',
+          name: 'barbie',
           subCategories: ['Reading', 'Writing', 'Spelling'],
         },
         {
-          name: 'Engineering Toys',
+          name: 'American girl',
           subCategories: ['Building Blocks', 'Robotics', 'Circuitry'],
         },
       ];
@@ -38,11 +38,11 @@ const ShopCategory = () => {
 </div> */}
 
 <Tabs>
-        <TabList className="flex border-b justify-center border-gray-200 mb-4">
+        <TabList className="flex border-b justify-center border-gray-200 my-4">
           {categories.map((category, index) => (
             <Tab
               key={category.name}
-              className="py-2 px-4 text-gray-600 hover:text-gray-800 cursor-pointer relative"
+              className="py-2 px-4 text-xl text-gray-600 hover:text-gray-900 cursor-pointer relative"
               onMouseEnter={() => handleCategoryHover(index)}
               onMouseLeave={handleCategoryLeave}
             >
