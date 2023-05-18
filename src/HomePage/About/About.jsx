@@ -2,7 +2,7 @@ import './About.css'
 
 const About = () => {
     return (
-        <div className="md:flex items-center justify-between my-10 md:my-20 px-3 md:px-20">
+        <div className="md:flex items-center justify-between my-10 md:my-20 md:px-0 px-3 md:w-5/6 w-full mx-auto">
 
 <div className="md:w-1/2 w-full" data-aos="flip-left"  data-aos-duration="1500" >
     <h4 className="text-xl text-red-400">About us</h4>
