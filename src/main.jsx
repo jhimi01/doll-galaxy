@@ -13,6 +13,8 @@ import ErrorPage from './pages/ErrorPage';
 import Register from './pages/Register/Register';
 import AuthProvider from './AuthPrvider/AuthProvider';
 import Login from './pages/Login/Login';
+import AddToys from './pages/AddToys/AddToys';
+import MyToys from './pages/MyToys/MyToys';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,16 @@ const router = createBrowserRouter([
       },{
         path: '/alltoys',
         element: <AllToys></AllToys>
-      },{
+      },
+      {
+        path: '/addtoys',
+        element: <AddToys></AddToys>
+      },
+      {
+        path: '/mytoys',
+        element: <MyToys></MyToys>
+      },
+      {
         path: '/register',
         element: <Register></Register>
       },{
