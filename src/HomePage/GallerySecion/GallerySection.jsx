@@ -8,32 +8,33 @@ import gallery7 from '../../assets/image/toy7.jpg';
 import gallery8 from '../../assets/image/toy8.jpg';
 import gallery9 from '../../assets/image/toy9.jpg';
 import gallery10 from '../../assets/image/toy10.jpg';
+import './GallerySection.css'
 const GallerySection = () => {
     return (
         <div className='md:px-32 px-5'>
            <h1 className="text-center text-5xl text-rose-400 font-bold mb-10">Gallery</h1>
            <div className='flex justify-center gap-3'>
            <div className='flex items-center justify-center flex-col gap-3'>
-           <img className='w-full h-full cursor-pointer' src={gallery7} alt="gallery1" />
-            <img className='w-full h-full' src={gallery1} alt="gallery2" />
-           <img className='w-full h-full' src={gallery8} alt="" />
+           <img className='rounded w-full h-full cursor-pointer' src={gallery7} alt="gallery1" />
+            <img className='rounded cursor-pointer w-full h-full' src={gallery1} alt="gallery2" />
+           <img className='rounded cursor-pointer w-full h-full' src={gallery8} alt="" />
            
            </div>
            <div className='flex items-center justify-center flex-col gap-3'>
-           <img className='w-full h-full' src={gallery2} alt="gallery6" />
-            <img className='w-full h-full' src={gallery10} alt="gallery7" />
-            <img className='w-full h-full' src={gallery6} alt="" />
+           <img className='rounded cursor-pointer w-full h-full' src={gallery2} alt="gallery6" />
+            <img className='rounded cursor-pointer w-full h-full' src={gallery10} alt="gallery7" />
+            <img className='rounded cursor-pointer w-full h-full' src={gallery6} alt="" />
            
            </div>
            <div className='flex items-center justify-center flex-col gap-3'>
-           <img className='w-full h-full' src={gallery3} alt="gallery3" />
-            <img className='w-full h-full' src={gallery9} alt="gallery9" />
-            <img className='w-full h-full' src={gallery7} alt="gallery10" />
+           <img className='rounded cursor-pointer w-full h-full' src={gallery3} alt="gallery3" />
+            <img className='rounded cursor-pointer w-full h-full' src={gallery9} alt="gallery9" />
+            <img className='rounded cursor-pointer w-full h-full' src={gallery7} alt="gallery10" />
            </div>
            <div className='flex items-center justify-center flex-col gap-3'>
-           <img className='w-full h-full' src={gallery4} alt="gallery4" />
-            <img className='w-full h-full' src={gallery5} alt="gallery5" />
-            <img className='w-full h-full' src={gallery8} alt="gallery8" />
+           <img className='rounded cursor-pointer w-full h-full' src={gallery4} alt="gallery4" />
+            <img className='rounded cursor-pointer w-full h-full' src={gallery5} alt="gallery5" />
+            <img className='rounded cursor-pointer w-full h-full' src={gallery8} alt="gallery8" />
            </div>
            </div>
         </div>
