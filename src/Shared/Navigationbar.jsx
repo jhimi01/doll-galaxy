@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import logo from '../../public/logo.png'
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/image/logo.png'
 const Navigationbar = () => {
     return (
         <div style={{background: '#fff'}} className="navbar sticky top-3 z-10 backdrop-filter backdrop-blur-lg  bg-opacity-30 container md:mx-10 rounded-full">
@@ -18,10 +18,10 @@ const Navigationbar = () => {
           <a className="btn btn-ghost normal-case text-xl">Toy Galaxy</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li className='text-xl'><Link to='/'>Home</Link></li>
-            <li className='text-xl'><Link to='/alltoys'>All Toys</Link></li>
-            <li className='text-xl'><Link to='/blog'>Blog</Link></li>
+          <ul  className=" space-x-5 menu-horizontal px-1">
+            <li className='text-xl'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/'>Home</NavLink></li>
+            <li className='text-xl'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/alltoys'>All Toys</NavLink></li>
+            <li className='text-xl'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/blog'>Blog</NavLink></li>
           </ul>
         </div>
         <div className="navbar-end">
