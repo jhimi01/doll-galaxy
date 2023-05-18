@@ -1,3 +1,4 @@
+import About from "../About/About";
 import Banner from "../Banner/Banner";
 import GallerySection from "../GallerySecion/GallerySection";
 import ShopCategory from "../ShopCategory/ShopCategory";
@@ -11,6 +12,9 @@ const Home = () => {
           </div>
           <div>
             <SliderLogo></SliderLogo>
+          </div>
+          <div>
+            <About></About>
           </div>
            <div className="my-10">
             <GallerySection></GallerySection>
