@@ -31,11 +31,11 @@ const ShopCategory = () => {
     return (
         <div >
             <h1 className="text-center text-5xl text-rose-400 font-bold">Shop Category</h1>
-            {/* <div className="flex items-center justify-center w-1/2 mx-auto   my-10 ">
+            <div className="flex items-center justify-center w-1/2 mx-auto   my-10 ">
   <a className="tab text-2xl tab-lifted tab-active">baby dolls</a> 
   <a className="tab text-2xl tab-lifted ">barbie</a> 
   <a className="tab text-2xl tab-lifted">American girl</a>
-</div> */}
+</div>
 
 <Tabs>
         <TabList className="flex border-b justify-center border-gray-200 my-4">
