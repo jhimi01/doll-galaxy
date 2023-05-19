@@ -3,7 +3,7 @@ import { AuthContext } from "../../AuthPrvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 
 const AddToys = () => {
-  const { user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const location = useLocation();
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
 
@@ -58,8 +58,8 @@ const AddToys = () => {
                 <input className="input-secondary  w-full input input-bordered " type="text" name="name" placeholder="toy name" />
                </div>
                <div className="flex mb-3 gap-3">
-                <input className="input-secondary  w-full input input-bordered " type="text" name="sellername" placeholder="seller name" />
-                <input className="input-secondary  w-full input input-bordered " type="email" name="selleremial" placeholder="seller email" />
+                <input className="input-secondary  w-full input input-bordered " value={user.displayName} type="text" name="sellername" placeholder="seller name" />
+                <input className="input-secondary  w-full input input-bordered " value={user.email} type="email" name="selleremial" placeholder="seller email" />
                </div>
                <div className="flex mb-3 gap-3">
                <select
@@ -88,6 +88,7 @@ const AddToys = () => {
              </form>
            </div>
         </div> : <Navigate to='/login' state={{from: location}} replace/>}
+        
        </>
     );
 };

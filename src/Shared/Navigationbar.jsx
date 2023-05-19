@@ -14,7 +14,7 @@ const Navigationbar = () => {
   }
 
     return (
-        <div style={{background: '#fff'}} className="navbar sticky top-3 z-10 backdrop-filter backdrop-blur-lg  bg-opacity-30 container mx-auto w-5/6  rounded-full">
+        <div style={{background: '#fff'}} className="navbar sticky top-3 z-50 backdrop-filter backdrop-blur-lg  bg-opacity-30 container mx-auto w-5/6  rounded-full">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navigationbar = () => {
             </ul>
           </div>
           <img src={logo} className='md:w-14 w-0 md:-mr-5' alt="" />
-          <a className="btn btn-ghost normal-case text-xl">Toy Galaxy</a>
+          <p className="btn btn-ghost normal-case text-xl">Doll Galaxy</p>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul  className=" space-x-5 menu-horizontal px-1">
@@ -73,10 +73,10 @@ const Navigationbar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <li>
-          <a className="justify-between">
+          <p className="justify-between">
            {user.displayName ? user?.displayName : 'Profile' }
             <span className="badge">New</span>
-          </a>
+          </p>
         </li>
         <li><a>Settings</a></li>
         <button onClick={handleLogout} className='btn btn-secondary'>Logout</button>

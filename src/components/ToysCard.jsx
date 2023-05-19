@@ -8,7 +8,7 @@ const ToysCard = ({toy}) => {
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img style={{height: '200px', objectFit:'cover'}}  className="w-full" src={url} alt="Product Image" />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{name}</div>
+          <div className="font-bold text-xl mb-2">Toy: {name}</div>
           <p className="text-gray-700 text-base">Price: ${price}</p>
           <div className="flex items-center mt-4">
             <svg className="w-4 h-4 fill-current text-yellow-500" viewBox="0 0 20 20">
@@ -22,8 +22,8 @@ const ToysCard = ({toy}) => {
             View Details
           </button></Link>
         </div>
+     
       </div>
-      
     );
 };
 
