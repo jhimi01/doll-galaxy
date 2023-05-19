@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 const ToysCard = ({toy}) => {
-  console.log(toy)
+  // console.log(toy)
     const {name, url, price, rating, _id} = toy;
-    console.log(toy)
+    // console.log(toy)
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img style={{height: '200px', objectFit:'cover'}}  className="w-full" src={url} alt="Product Image" />

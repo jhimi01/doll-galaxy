@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthPrvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const AddToys = () => {
     const url = form.url.value;
     const name = form.name.value;
     const sellername = form.sellername.value;
-    const selleremial = form.selleremial.value;
+    const email = form.selleremial.value;
     const subcategory = form.subcategory.value;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -21,7 +22,7 @@ const AddToys = () => {
     const details = form.details.value;
 
     const toysfiled = 
-    {url, name, sellername, selleremial, subcategory, price, rating, availablequality, details}
+    {url, name, sellername, email, subcategory, price, rating, availablequality, details}
     console.log(toysfiled);
 
     fetch('http://localhost:5000/toys', {
@@ -34,22 +35,24 @@ const AddToys = () => {
     .then(res => res.json())
     .then(data => {
       form.reset()
-      console.log(data)});
+      console.log(data)
+      if (data.insertedId) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    
+    });
 
-    // console.log(url)
-    // console.log(name)
-    // console.log(sellername)
-    // console.log(selleremial)
-    // console.log(subcategory)
-    // console.log(price)
-    // console.log(rating)
-    // console.log(availablequality)
-    // console.log(details)
   }
 
     return (
-       <>
-        {user ?  <div >
+      
+          <div >
            <div className="w-full md:w-3/4 mx-auto mt-10">
            <h1 className="text-5xl my-5 text-center font-bold text-rose-400">Add Toys</h1>
              <form onSubmit={handleaddtoy} className="w-full md:w-3/4 mx-auto">
@@ -58,8 +61,8 @@ const AddToys = () => {
                 <input className="input-secondary  w-full input input-bordered " type="text" name="name" placeholder="toy name" />
                </div>
                <div className="flex mb-3 gap-3">
-                <input className="input-secondary  w-full input input-bordered " value={user.displayName} type="text" name="sellername" placeholder="seller name" />
-                <input className="input-secondary  w-full input input-bordered " value={user.email} type="email" name="selleremial" placeholder="seller email" />
+                <input className="input-secondary  w-full input input-bordered " value={user?.displayName} type="text" name="sellername" placeholder="seller name" />
+                <input className="input-secondary  w-full input input-bordered " value={user?.email} type="email" name="selleremial" placeholder="seller email" />
                </div>
                <div className="flex mb-3 gap-3">
                <select
@@ -83,13 +86,12 @@ const AddToys = () => {
                </div>
                <textarea name="details" placeholder="description" className="textarea textarea-secondary textarea-bordered w-full" ></textarea>
               <div className="text-center">
-              <input type="submit" className="btn btn-secondary" />
+              <input type="submit" className="btn px-5 mt-2 btn-secondary" />
               </div>
              </form>
            </div>
-        </div> : <Navigate to='/login' state={{from: location}} replace/>}
-        
-       </>
+        </div> 
+   
     );
 };
 
