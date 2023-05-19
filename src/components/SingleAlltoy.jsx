@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const SingleAlltoy = ({alldata, index}) => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+      };
+      
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
+      
+
+
     const { name, sellername, url, subcategory, availablequality, price}= alldata
     return (
         <tr>
@@ -29,9 +42,29 @@ const SingleAlltoy = ({alldata, index}) => {
         <td>${price}</td>
         <td>{availablequality}</td>
         <th>
-          <button className="btn btn-secondary">details
+          <button onClick={openModal} className="btn btn-secondary">details
          </button>
-         <label htmlFor="my-modal-3" className="btn">details</label>
+         {
+            isModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center z-50">
+      <div className="modal modal-open">
+        <div className="modal-box">
+          <h2 className="modal-title">Modal Title</h2>
+          <p className="modal-text">Modal content goes here.</p>
+          <div className="modal-action">
+            <button
+              className="btn"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+            )
+         }
+        
         </th>
       </tr>
     );
