@@ -15,7 +15,36 @@ const AddToys = () => {
     const sellername = form.sellername.value;
     const selleremial = form.selleremial.value;
     const subcategory = form.subcategory.value;
-    console.log(url, name, sellername, selleremial, subcategory)
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const availablequality = form.availablequality.value;
+    const details = form.details.value;
+
+    const toysfiled = 
+    {url, name, sellername, selleremial, subcategory, price, rating, availablequality, details}
+    console.log(toysfiled);
+
+    fetch('http://localhost:5000/toys', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(toysfiled)
+    })
+    .then(res => res.json())
+    .then(data => {
+      form.reset()
+      console.log(data)});
+
+    // console.log(url)
+    // console.log(name)
+    // console.log(sellername)
+    // console.log(selleremial)
+    // console.log(subcategory)
+    // console.log(price)
+    // console.log(rating)
+    // console.log(availablequality)
+    // console.log(details)
   }
 
     return (
@@ -50,7 +79,7 @@ const AddToys = () => {
                </div>
                <div className="flex mb-3 gap-3">
                 <input className="input-secondary  w-full input input-bordered " type="text" name="rating" placeholder="ratings" />
-                <input className="input-secondary  w-full input input-bordered " type="text" name="available-quality" placeholder="Available quantity" />
+                <input className="input-secondary  w-full input input-bordered " type="text" name="availablequality" placeholder="Available quantity" />
                </div>
                <textarea name="details" placeholder="description" className="textarea textarea-secondary textarea-bordered w-full" ></textarea>
               <div className="text-center">

@@ -12,7 +12,7 @@ import './GallerySection.css'
 const GallerySection = () => {
     return (
         <div className='md:px-32 px-5'>
-          <div className='text-center md:my-10 my-5'>
+          {/* <div className='text-center md:my-10 my-5'>
           <h1 className="text-center md:text-5xl text-3xl text-rose-400 font-bold md:mb-4 mb-1">Photo Gallery</h1>
            <p className='text-gray-700 md:text-xl text-xs'>At our company, our top priority is the happiness and success of our clients. We are dedicated to building strong and long-lasting relationships, and we are grateful for the trust and confidence our clients place in us.</p>
           </div>
@@ -39,7 +39,7 @@ const GallerySection = () => {
             <img className='rounded cursor-pointer w-full h-full' src={gallery5} alt="gallery5" />
             <img className='rounded cursor-pointer w-full h-full' src={gallery8} alt="gallery8" />
            </div>
-           </div>
+           </div> */}
         </div>
     );
 };

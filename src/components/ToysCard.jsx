@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
 const ToysCard = ({toy}) => {
-    const {name, picture_url, price, rating, _id} = toy;
+  console.log(toy)
+    const {name, url, price, rating, _id} = toy;
     console.log(toy)
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Product Image" />
+        <img style={{height: '200px'}}  className="w-full" src={url} alt="Product Image" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{name}</div>
           <p className="text-gray-700 text-base">Price: ${price}</p>

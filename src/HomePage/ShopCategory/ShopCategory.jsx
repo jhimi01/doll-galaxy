@@ -50,7 +50,7 @@ const ShopCategory = () => {
       >
         American girl
       </button>
-      <select
+      {/* <select
           className="tab text-2xl tab-lifted"
           value={selectedCategory}
           onChange={(e) => handleCategory(e.target.value)}
@@ -58,7 +58,7 @@ const ShopCategory = () => {
           <option value="Baby dolls">Baby dolls</option>
           <option value="Barbie">Barbie</option>
           <option  value="American girl">American girl</option>
-        </select>
+        </select> */}
 </div>
 
 <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>

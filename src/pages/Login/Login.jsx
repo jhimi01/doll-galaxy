@@ -24,10 +24,10 @@ const Login = () => {
         .then(result => {
           const user = result.user;
           console.log(user)
+          navigate(from, { replace: true });
           form.reset()
           setSeccess('logged in successfully')
           setError('')
-          navigate(from, { replace: true });
         }).catch(error => {
       const errorMessage = error.message;
       setError(errorMessage)
@@ -40,10 +40,10 @@ const Login = () => {
         loginWithGoogleAuth()
         .then(result => {
             const user = result.user;
+            navigate(from, { replace: true });
             console.log(user)
             setSeccess('registered successfully')
             setError('')
-            navigate(from, { replace: true });
           }).catch(error => {
         const errorMessage = error.message;
         setError(errorMessage)
