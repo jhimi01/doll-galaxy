@@ -7,7 +7,7 @@ const SingleToys = () => {
     return (
         <div className="md:flex items-center gap-3 justify-between mx-auto w-full md:w-5/6 mt-20 bg-rose-100 p-4">
             <div className="w-full">
-                <img style={{height: '300px'}}   className="w-full" src={url} alt="product" />
+                <img style={{height: '300px', objectFit:'cover'}}   className="w-full" src={url} alt="product" />
             </div>
             <div className="bg-base-100 w-full  p-5">
                 <h2 className="mb-4 text-xl font-semibold text-gray-700">Doll Name: {name}</h2>

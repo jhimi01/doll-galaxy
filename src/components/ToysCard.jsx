@@ -6,7 +6,7 @@ const ToysCard = ({toy}) => {
     console.log(toy)
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img style={{height: '200px'}}  className="w-full" src={url} alt="Product Image" />
+        <img style={{height: '200px', objectFit:'cover'}}  className="w-full" src={url} alt="Product Image" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{name}</div>
           <p className="text-gray-700 text-base">Price: ${price}</p>
