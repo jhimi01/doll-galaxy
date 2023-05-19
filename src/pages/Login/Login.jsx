@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from '../../assets/login.svg'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthPrvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
     const { loginemailpass, loginWithGoogleAuth } = useContext(AuthContext)
@@ -86,7 +87,7 @@ const Login = () => {
                </div>
             </form>
             <div className="divider">OR</div>
-            <button onClick={handleGoogle} className="btn btn-secondary" >Login with Google</button>
+            <button onClick={handleGoogle} className="btn btn-secondary" >Login with Google <FaGoogle className="text-xl text-rose-500 ml-2"/></button>
             <input type="submit" value='' />
                <p>Are you new here? <Link to='/register'><span className='underline'>Register</span></Link></p>
              </div>

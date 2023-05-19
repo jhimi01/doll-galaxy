@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import login from '../../assets/login.svg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthPrvider/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 const Register = () => {
 
     let navigate = useNavigate();
@@ -89,9 +90,7 @@ const Register = () => {
           </label>
           <input type="url" placeholder="Photo Url" name='url' className="input input-bordered" required/>
         </div>
-        <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
+       
         <div className="form-control mt-3">
         <input type="submit" className="btn btn-secondary" value='Register' />
         {error && <p className='text-red-600'>{error}</p>}
@@ -99,7 +98,7 @@ const Register = () => {
         </div>
      </form>
      <div className="divider">OR</div>
-            <button onClick={handleGoogle} className="btn btn-secondary" >Login with Google</button>
+            <button onClick={handleGoogle} className="btn btn-secondary" >Login with Google <FaGoogle className="text-xl text-rose-500 ml-2"/></button>
         <p>Do you have an account? <Link to='/login'><span className='underline'>Login</span></Link></p>
       </div>
     </div>
