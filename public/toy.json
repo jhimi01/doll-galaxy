@@ -1,0 +1,70 @@
+ [
+      {
+        "picture_url": "https://example.com/toy1.jpg",
+        "name": "ABC Math Set",
+        "seller_name": "John Doe",
+        "seller_email": "johndoe@example.com",
+        "sub_category": "Baby dolls",
+        "price": 19.99,
+        "rating": 4.5,
+        "quantity_available": 10,
+        "description": "The ABC Math Set is a fun and educational toy that helps children learn basic math skills through interactive play. It includes colorful number blocks, counting cards, and an activity booklet. Suitable for children aged 3 and above."
+      },
+      {
+        "picture_url": "https://example.com/toy2.jpg",
+        "name": "Word Wizard Language Kit",
+        "seller_name": "Jane Smith",
+        "seller_email": "janesmith@example.com",
+        "sub_category": "Barbie",
+        "price": 29.99,
+        "rating": 4.2,
+        "quantity_available": 5,
+        "description": "The Word Wizard Language Kit is a comprehensive language learning tool for children. It includes flashcards, word puzzles, and an interactive talking pen. Perfect for enhancing vocabulary and language skills. Recommended for ages 5 and above."
+      },
+      {
+        "picture_url": "https://example.com/toy3.jpg",
+        "name": "Science Explorers Kit",
+        "seller_name": "Amy Johnson",
+        "seller_email": "amyjohnson@example.com",
+        "sub_category": "American girl",
+        "price": 39.99,
+        "rating": 4.8,
+        "quantity_available": 8,
+        "description": "The Science Explorers Kit is a hands-on learning experience for young scientists. It contains a variety of experiments and materials to discover the wonders of science. From chemical reactions to simple machines, this kit covers it all. Suitable for ages 8 and above."
+      },
+      {
+        "picture_url": "https://example.com/toy4.jpg",
+        "name": "Counting Caterpillar",
+        "seller_name": "jam Green",
+        "seller_email": "jamgreen@example.com",
+        "sub_category": "Baby dolls",
+        "price": 9.99,
+        "rating": 4.0,
+        "quantity_available": 15,
+        "description": "The Counting Caterpillar is a fun and interactive toy that helps children learn counting and basic math concepts. Each segment of the caterpillar represents a number, and kids can connect them to create their own number sequences. Suitable for ages 2-5."
+      },
+      {
+        "picture_url": "https://example.com/toy5.jpg",
+        "name": "Junior Chemist Lab",
+        "seller_name": "Mike Anderson",
+        "seller_email": "mikeanderson@example.com",
+        "sub_category": "American girl",
+        "price": 24.99,
+        "rating": 4.7,
+        "quantity_available": 12,
+        "description": "The Junior Chemist Lab is a beginner's chemistry set that introduces kids to the world of scientific experiments. It includes test tubes, safety goggles, and a variety of chemicals for conducting simple but exciting experiments. Recommended for ages 10 and above with adult supervision."
+      },
+      {
+        "picture_url": "https://example.com/toy2.jpg",
+        "name": "Word Wizard Language Kit",
+        "seller_name": "Jane Smith",
+        "seller_email": "janesmith@example.com",
+        "sub_category": "Barbie",
+        "price": 29.99,
+        "rating": 4.2,
+        "quantity_available": 5,
+        "description": "The Word Wizard Language Kit is a comprehensive language learning tool for children. It includes flashcards, word puzzles, and an interactive talking pen. Perfect for enhancing vocabulary and language skills. Recommended for ages 5 and above."
+      }
+    ]
+
+  

@@ -15,6 +15,8 @@ import AuthProvider from './AuthPrvider/AuthProvider';
 import Login from './pages/Login/Login';
 import AddToys from './pages/AddToys/AddToys';
 import MyToys from './pages/MyToys/MyToys';
+import PrivateRoute from './routes/PrivateRoute';
+import SingleToys from './pages/SingleToys/SingleToys';
 
 const router = createBrowserRouter([
   {
@@ -31,10 +33,15 @@ const router = createBrowserRouter([
       },{
         path: '/alltoys',
         element: <AllToys></AllToys>
-      },
+      },{
+        path:'/shopby/:id',
+        element:<SingleToys></SingleToys>,
+        loader: ({params}) => fetch(`http://localhost:5000/toys/shopby/${params.id}`)
+       },
       {
         path: '/addtoys',
         element: <AddToys></AddToys>
+        // element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
       },
       {
         path: '/mytoys',

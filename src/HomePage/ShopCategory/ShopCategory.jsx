@@ -1,81 +1,71 @@
-import { Tab, TabList, Tabs } from 'react-tabs';
+import ToysCard from '../../components/ToysCard';
 import './ShopCategory.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+
 const ShopCategory = () => {
      // Define your categories and sub-categories
-     const categories = [
-        {
-          name: 'baby dolls',
-          subCategories: ['Algebra', 'Geometry', 'Puzzles'],
-        },
-        {
-          name: 'barbie',
-          subCategories: ['Reading', 'Writing', 'Spelling'],
-        },
-        {
-          name: 'American girl',
-          subCategories: ['Building Blocks', 'Robotics', 'Circuitry'],
-        },
-      ];
+     const [selectedCategory, setSelectedCategory] = useState("Baby dolls");
+     const [toys, setToys] = useState([])
+
+   
+    const handleCategory = (category) => {
+      setSelectedCategory(category);
     
-      const [activeCategory, setActiveCategory] = useState(null);
-    
-      const handleCategoryHover = (index) => {
-        setActiveCategory(index);
+      // Fetch toys based on the current category
+      fetch('http://localhost:5000/toys?category=' + encodeURIComponent(category))
+        .then(res => res.json())
+        .then(data => setToys(data));
+
+
       };
+      useEffect(() => {
+        // Fetch toys based on the initial selected category when the component mounts
+        fetch('http://localhost:5000/toys?category=' + encodeURIComponent(selectedCategory))
+          .then(res => res.json())
+          .then(data => setToys(data));
+      }, []); 
     
-      const handleCategoryLeave = () => {
-        setActiveCategory(null);
-      };
+    console.log(toys)
     
     return (
-        <div >
+        <div className='md:w-5/6 w-full px-3 md:px-0 mx-auto'>
             <h1 className="text-center text-5xl text-rose-400 font-bold">Shop Category</h1>
             <div className="flex items-center justify-center w-1/2 mx-auto   my-10 ">
-  <a className="tab text-2xl tab-lifted tab-active">baby dolls</a> 
-  <a className="tab text-2xl tab-lifted ">barbie</a> 
-  <a className="tab text-2xl tab-lifted">American girl</a>
+            <button
+        className={`tab text-2xl tab-lifted ${selectedCategory === 'Baby dolls' ? 'tab-active' : ''}`}
+        onClick={() => handleCategory('Baby dolls')}
+      >
+        Baby dolls
+      </button>
+      <button
+        className={`tab text-2xl tab-lifted ${selectedCategory === 'Barbie' ? 'tab-active' : ''}`}
+        onClick={() => handleCategory('Barbie')}
+      >
+        Barbie
+      </button>
+      <button
+        className={`tab text-2xl tab-lifted ${selectedCategory === 'American girl' ? 'tab-active' : ''}`}
+        onClick={() => handleCategory('American girl')}
+      >
+        American girl
+      </button>
+      <select
+          className="tab text-2xl tab-lifted"
+          value={selectedCategory}
+          onChange={(e) => handleCategory(e.target.value)}
+        >
+          <option value="Baby dolls">Baby dolls</option>
+          <option value="Barbie">Barbie</option>
+          <option  value="American girl">American girl</option>
+        </select>
 </div>
 
-<Tabs>
-        <TabList className="flex border-b justify-center border-gray-200 my-4">
-          {categories.map((category, index) => (
-            <Tab
-              key={category.name}
-              className="py-2 px-4 text-xl text-gray-600 hover:text-gray-900 cursor-pointer relative"
-              onMouseEnter={() => handleCategoryHover(index)}
-              onMouseLeave={handleCategoryLeave}
-            >
-              {category.name}
-              {activeCategory === index && (
-                <div className="absolute left-0 w-full py-2 bg-white shadow-lg mt-2">
-                  {category.subCategories.map((subCategory) => (
-                    <div
-                      key={subCategory}
-                      className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
-                    >
-                      {subCategory}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </Tab>
-          ))}
-        </TabList>
-
-        {/* {categories.map((category) => (
-          <TabPanel key={category.name}>
-            <h3 className="text-lg font-bold mb-2">{category.name}</h3>
-            <ul className="list-disc list-inside">
-              {category.subCategories.map((subCategory) => (
-                <li key={subCategory} className="text-gray-600">
-                  {subCategory}
-                </li>
-              ))}
-            </ul>
-          </TabPanel>
-        ))} */}
-      </Tabs>
+<div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
+  {
+    toys.map((toy) => <ToysCard key={toy._id} toy={toy}></ToysCard>)
+  }
+</div>
 
         </div>
     );
