@@ -80,7 +80,7 @@ const GallerySection = () => {
               className="w-full h-full"
               style={{objectFit: 'cover'}}
             />
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-75 transition-opacity duration-300">
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200">
               <button
                 className="px-4 py-2 bg-secondary text-white rounded-lg"
                 onClick={() => openModal(image)}
