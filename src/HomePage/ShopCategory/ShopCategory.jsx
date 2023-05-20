@@ -26,7 +26,7 @@ const ShopCategory = () => {
           .then(data => setToys(data));
       }, []); 
     
-    console.log(toys)
+    // console.log(toys)
     
     return (
         <div className='md:w-5/6 w-full px-3 md:px-0 mx-auto'>

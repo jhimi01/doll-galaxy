@@ -17,7 +17,7 @@ const AllToys = () => {
 
 
   const habdleSearch = (value) => {
-console.log(value)
+// console.log(value)
 if (value.length == 0) {
   fetch("http://localhost:5000/toys/all")
   .then((res) => res.json())
@@ -32,7 +32,7 @@ if (value.length == 0) {
 
   
 
-  console.log(alldatas);
+  // console.log(alldatas);
   return (
     <div className="w-full md:w-5/6 md:px-0 px-3 mx-auto mt-7">
       <div className="overflow-x-auto w-full">
