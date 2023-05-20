@@ -3,8 +3,9 @@ import login from '../../assets/login.svg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthPrvider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 const Register = () => {
-
+  useTitle('Register');
     let navigate = useNavigate();
     const [error, setError] = useState('')
     const [success, setSeccess] = useState('')

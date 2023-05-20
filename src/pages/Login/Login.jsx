@@ -3,12 +3,14 @@ import login from '../../assets/login.svg'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthPrvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
     const { loginemailpass, loginWithGoogleAuth } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSeccess] = useState('')
     let navigate = useNavigate();
+    useTitle('Login');
     let location = useLocation()
     let from = location.state?.from?.pathname || '/';
 

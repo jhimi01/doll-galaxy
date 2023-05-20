@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 const ToysCard = ({toy}) => {
   // console.log(toy)
+
     const {name, url, price, rating, _id} = toy;
     // console.log(toy)
     return (

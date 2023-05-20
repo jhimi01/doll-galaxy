@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import SingleAlltoy from "../../components/SingleAlltoy";
 import { FaSistrix } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const [alldatas, setAlldatas] = useState([]);
   const [loader, setLoader] = useState(true)
   const [search, setSearch] = useState('');
-
+  useTitle('All Toys');
   useEffect(() => {
     fetch("http://localhost:5000/toys/all")
       .then((res) => res.json())
@@ -29,13 +30,6 @@ if (value.length == 0) {
     });
     }
 
-    // const handleallview =(id)=>{
-    //   fetch(`http://localhost:5000/toys/all/${id}`)
-    //   .then((res) => res.json())
-    //   .then(data => {
-    //     console.log(data)
-    //   })
-    // }
   
 
   console.log(alldatas);
