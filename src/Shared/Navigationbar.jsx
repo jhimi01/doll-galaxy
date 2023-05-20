@@ -37,11 +37,11 @@ const Navigationbar = () => {
           <ul  className=" space-x-5 menu-horizontal px-1">
             <li className='text-lg'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/'>Home</NavLink></li>
             <li className='text-lg'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/alltoys'>All Toys</NavLink></li>
-            <li className='text-lg'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/blog'>Blog</NavLink></li>
             {user && <>
-              <li className='text-lg'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/addtoys'>Add Toys</NavLink></li>
             <li className='text-lg'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/mytoys'>My Toys</NavLink></li>
+              <li className='text-lg'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/addtoys'>Add Toys</NavLink></li>
             </>}
+            <li className='text-lg'><NavLink className={({ isActive}) => isActive ? "bg-rose-100 p-2 rounded-full" : "" } to='/blog'>Blog</NavLink></li>
           </ul>
         </div>
         <div className="navbar-end">

@@ -5,6 +5,7 @@ import { FaSistrix } from "react-icons/fa";
 const AllToys = () => {
   const [alldatas, setAlldatas] = useState([]);
   const [loader, setLoader] = useState(true)
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetch("http://localhost:5000/toys/all")
@@ -13,6 +14,22 @@ const AllToys = () => {
       setLoader(false)
   }, [loader]);
 
+
+  const habdleSearch = (value) => {
+console.log(value)
+if (value.length == 0) {
+  fetch("http://localhost:5000/toys/all")
+  .then((res) => res.json())
+  .then((data) => setAlldatas(data));
+}
+  fetch(`http://localhost:5000/searchtext/${value}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setAlldatas(data);
+    });
+    }
+  
+
   console.log(alldatas);
   return (
     <div className="w-full md:w-5/6 md:px-0 px-3 mx-auto mt-7">
@@ -20,11 +37,16 @@ const AllToys = () => {
 
 
       <div className="md:w-2/3 mx-auto my-5 relative">
-         <input type="text" placeholder="search by toy name" className="input input-bordered w-full " />
-         <FaSistrix className="absolute right-4 cursor-pointer text-2xl  bottom-3"/>
+         <input type="text" 
+         onChange={e => habdleSearch(e.target.value)} 
+        //  onChange={e => setSearch(e.target.value)} 
+         placeholder="search by toy name" 
+         className="input input-bordered w-full " />
+         <FaSistrix onClick={habdleSearch} className="absolute right-4 cursor-pointer text-2xl  bottom-3"/>
       </div>
 
-      { loader ?  <div style={{ display: "flex", justifyContent: "center" ,alignItems:'center' ,height:'55vh'}}>
+      { loader ?
+        <div style={{ display: "flex", justifyContent: "center" ,alignItems:'center' ,height:'55vh'}}>
        <progress className="progress w-5/6"></progress>
       </div> :  <table className="table w-full">
           {/* head */}
