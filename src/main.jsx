@@ -35,17 +35,16 @@ const router = createBrowserRouter([
         element: <AllToys></AllToys>
       },{
         path:'/shopby/:id',
-        element: <SingleToys></SingleToys>,
+        element: <PrivateRoute><SingleToys></SingleToys></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/toys/shopby/${params.id}`)
        },
       {
         path: '/addtoys',
-        element: <AddToys></AddToys>
-        // element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
+        element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
       },
       {
         path: '/mytoys',
-        element: <MyToys></MyToys>
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
       },
       {
         path: '/register',

@@ -8,13 +8,13 @@ const PrivateRoute = ({ children }) => {
     console.log(user)
 
     if(loader){
-        <div style={{ display: "flex", justifyContent: "center" ,alignItems:'center' ,height:'55vh'}}>
-      <progress className="progress w-3/4"></progress>
-     </div>
+       return  <div style={{ display: "flex", justifyContent: "center" ,alignItems:'center' ,height:'55vh'}}>
+       <progress className="progress w-3/4"></progress>
+      </div>
     }
 
     if (user) {
-        {children}
+       return children
     }
     return <Navigate to='/login' state={{from: location}} replace/>
 }

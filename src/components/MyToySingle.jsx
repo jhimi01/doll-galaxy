@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import Swal from 'sweetalert2';
 
-const MyToySingle = ({mytoy, control, setControl}) => {
+const MyToySingle = ({mytoy, control, setControl, index}) => {
     const { email, name, price, details, rating, url, subcategory, availablequality, _id, status }  = mytoy;
     const [isModalOpen, setIsModalOpen] = useState(false);
     // const [control, setControl] = useState(false)
@@ -93,7 +93,8 @@ const MyToySingle = ({mytoy, control, setControl}) => {
 
     return (
         <tr>
-        <th>
+        <th className='flex items-center gap-2'>
+        <p>{index + 1}</p>
         <button onClick={()=>handleDelete(_id)} className="btn btn-sm btn-secondary btn-circle btn-outline">
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
 </button>
@@ -152,14 +153,10 @@ const MyToySingle = ({mytoy, control, setControl}) => {
             name='details'
              defaultValue={details} className="input mt-0 input-bordered text-gray-700 w-full max-w-xs" />
             <br />
-            <input type="submit" value='submit' className='btn' />
+            <input type="submit" value='submit' className='btn btn-secondary mt-6' />
   </form>
             <div className="modal-action">
   
-            <button className="btn btn-secondary" onClick={() => handleUpdate(_id)}>update</button>
-
-            {/* { status === "confirm" ? <button onClick={closeModal} >updated</button> : <button onClick={()=>handleUpdate(_id)} className="btn btn-secondary" >update</button>} */}
-
               <button
                 className="btn btn-secondary"
                 onClick={closeModal}

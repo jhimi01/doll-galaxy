@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthPrvider/AuthProvider";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
+  const navigate = useNavigate()
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
 
   const handleaddtoy =(e)=>{
@@ -44,6 +45,7 @@ const AddToys = () => {
           showConfirmButton: false,
           timer: 1500
         })
+        navigate("/mytoys");
       }
     
     });

@@ -47,7 +47,9 @@ const AuthProvider = ({ children }) => {
         setUser(loggedInUser)
         setLoader(false)
     })
-    return ()=>{ unsbscribe()}
+    return ()=>{
+         unsbscribe() 
+        }
    },[])
 
 
