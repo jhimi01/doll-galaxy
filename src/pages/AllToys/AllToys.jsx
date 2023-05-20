@@ -9,7 +9,7 @@ const AllToys = () => {
   const [search, setSearch] = useState('');
   useTitle('All Toys');
   useEffect(() => {
-    fetch("http://localhost:5000/toys/all")
+    fetch("https://toy-galaxy-server-plum.vercel.app/toys/all")
       .then((res) => res.json())
       .then((data) => setAlldatas(data));
       setLoader(false)
@@ -19,11 +19,11 @@ const AllToys = () => {
   const habdleSearch = (value) => {
 // console.log(value)
 if (value.length == 0) {
-  fetch("http://localhost:5000/toys/all")
+  fetch("https://toy-galaxy-server-plum.vercel.app/toys/all")
   .then((res) => res.json())
   .then((data) => setAlldatas(data));
 }
-  fetch(`http://localhost:5000/searchtext/${value}`)
+  fetch(`https://toy-galaxy-server-plum.vercel.app/searchtext/${value}`)
     .then((res) => res.json())
     .then((data) => {
       setAlldatas(data);

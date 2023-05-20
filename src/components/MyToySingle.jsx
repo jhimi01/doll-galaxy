@@ -25,7 +25,7 @@ const handleDelete = (_id) => {
   }).then((result) => {
     if (result.isConfirmed) {
 
-      fetch(`http://localhost:5000/toys/all/delete/${_id}`,{
+      fetch(`https://toy-galaxy-server-plum.vercel.app/toys/all/delete/${_id}`,{
         method: 'DELETE',
       })
       .then(res => res.json())
@@ -52,7 +52,7 @@ const form = e.target;
         const details = form.details.value;
         const updatetoys = {price, availablequality, details}
 
-        fetch(`http://localhost:5000/toys/all/email/update/${_id}`,{
+        fetch(`https://toy-galaxy-server-plum.vercel.app/toys/all/email/update/${_id}`,{
           method: 'PUT',
           headers: {
             'content-type': 'application/json'

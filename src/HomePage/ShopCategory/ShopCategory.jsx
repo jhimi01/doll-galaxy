@@ -13,7 +13,7 @@ const ShopCategory = () => {
       setSelectedCategory(category);
     
       // Fetch toys based on the current category
-      fetch('http://localhost:5000/toys?category=' + encodeURIComponent(category))
+      fetch('https://toy-galaxy-server-plum.vercel.app/toys?category=' + encodeURIComponent(category))
         .then(res => res.json())
         .then(data => setToys(data));
 
@@ -21,7 +21,7 @@ const ShopCategory = () => {
       };
       useEffect(() => {
         // Fetch toys based on the initial selected category when the component mounts
-        fetch('http://localhost:5000/toys?category=' + encodeURIComponent(selectedCategory))
+        fetch('https://toy-galaxy-server-plum.vercel.app/toys?category=' + encodeURIComponent(selectedCategory))
           .then(res => res.json())
           .then(data => setToys(data));
       }, []); 

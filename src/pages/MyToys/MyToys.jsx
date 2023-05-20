@@ -26,7 +26,7 @@ const MyToys = () => {
   };
 // ----------------
 
-const url = `http://localhost:5000/user/data?email=${user.email}`
+const url = `https://toy-galaxy-server-plum.vercel.app/user/data?email=${user.email}`
 useEffect(()=>{
   fetch(url)
   .then(res => res.json())

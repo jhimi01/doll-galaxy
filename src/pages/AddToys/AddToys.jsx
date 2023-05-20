@@ -28,7 +28,7 @@ const AddToys = () => {
     {url, name, sellername, email, subcategory, price, rating, availablequality, details}
     console.log(toysfiled);
 
-    fetch('http://localhost:5000/toys', {
+    fetch('https://toy-galaxy-server-plum.vercel.app/toys', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

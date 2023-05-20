@@ -38,11 +38,11 @@ const router = createBrowserRouter([
       {
         path: '/toys/all/:id',
         element: <PrivateRoute><Viewdetails></Viewdetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/toys/all/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-galaxy-server-plum.vercel.app/toys/all/${params.id}`)
       },{
         path:'/shopby/:id',
         element: <PrivateRoute><SingleToys></SingleToys></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/toys/shopby/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-galaxy-server-plum.vercel.app/toys/shopby/${params.id}`)
        },
       {
         path: '/addtoys',
