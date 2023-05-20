@@ -28,6 +28,14 @@ if (value.length == 0) {
       setAlldatas(data);
     });
     }
+
+    // const handleallview =(id)=>{
+    //   fetch(`http://localhost:5000/toys/all/${id}`)
+    //   .then((res) => res.json())
+    //   .then(data => {
+    //     console.log(data)
+    //   })
+    // }
   
 
   console.log(alldatas);
@@ -63,9 +71,10 @@ if (value.length == 0) {
               <th></th>
             </tr>
           </thead>
+          {/* handleallview={handleallview} */}
        <tbody>
             {alldatas.map((alldata, index) => (
-              <SingleAlltoy alldata={alldata} index={index} key={alldata._id}></SingleAlltoy>
+              <SingleAlltoy alldata={alldata}  index={index} key={alldata._id}></SingleAlltoy>
             ))}
           </tbody>
         </table>}

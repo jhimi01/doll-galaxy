@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleAlltoy = ({alldata, index}) => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-      };
-      
-      const closeModal = () => {
-        setIsModalOpen(false);
-      };
-      
+    const { name, sellername, url, subcategory, availablequality, price, _id}= alldata;
 
 
-    const { name, sellername, url, subcategory, availablequality, price}= alldata
+
     return (
         <tr>
         <th>
@@ -42,28 +34,8 @@ const SingleAlltoy = ({alldata, index}) => {
         <td>${price}</td>
         <td>{availablequality}</td>
         <th>
-          <button onClick={openModal} className="btn btn-secondary">details
-         </button>
-         {
-            isModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="modal modal-open">
-        <div className="modal-box">
-          <h2 className="modal-title">Modal Title</h2>
-          <p className="modal-text">Modal content goes here.</p>
-          <div className="modal-action">
-            <button
-              className="btn"
-              onClick={closeModal}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-            )
-         }
+          <Link to={`/toys/all/${_id}`}><button  className="btn btn-secondary">details
+         </button></Link>
         
         </th>
       </tr>
