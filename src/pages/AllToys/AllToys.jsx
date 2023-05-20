@@ -70,7 +70,7 @@ if (value.length == 0) {
           </tbody>
         </table>}
 
-      
+      <p className="text-gray-400 text-xl font-semibold mt-5">limited 20 items</p>
       </div>
      
     </div>
