@@ -30,7 +30,7 @@ useEffect(()=>{
   const handleSort = () => {
     // Add your sorting logic here based on the selectedOption
     if (selectedOption === 'lowToHigh') {
-      fetch(`https://toy-galaxy-server-plum.vercel.app/user/sort/low?email=${user.email}`)
+      fetch(`https://toy-galaxy-server-plum.vercel.app/user/sort/high?email=${user.email}`)
       .then(res => res.json())
       .then(data => setMytoys(data))
      
@@ -39,10 +39,11 @@ useEffect(()=>{
    
 
      else if (selectedOption === 'highToLow') {
-      fetch(`https://toy-galaxy-server-plum.vercel.app/user/sort/high?email=${user.email}`)
+   
+     
+      fetch(`https://toy-galaxy-server-plum.vercel.app/user/sort/low?email=${user.email}`)
       .then(res => res.json())
       .then(data => setMytoys(data))
-     
     }
   };
   console.log(mytoys)

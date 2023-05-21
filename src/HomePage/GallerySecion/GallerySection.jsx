@@ -10,20 +10,21 @@ import gallery9 from '../../assets/image/toy9.jpg';
 import gallery10 from '../../assets/image/toy10.jpg';
 import './GallerySection.css'
 import { useState } from 'react';
+import LazyLoad from 'react-lazy-load';
 const GallerySection = () => {
     const images = [
-        gallery1,
-        gallery2,
-        gallery3,
-        gallery4,
-        gallery5,
-        gallery6,
-        gallery7,
-        gallery8,
-        gallery9,
-        gallery10,
-        gallery4,
-        gallery5
+        "https://i.ibb.co/z79nx5F/toy1.jpg",
+        "https://i.ibb.co/ZWz1TtF/toy2.jpg",
+        "https://i.ibb.co/gJFTtGP/toy3.jpg",
+        "https://i.ibb.co/CmgkVvk/toy4.jpg",
+        "https://i.ibb.co/9ynQ7m8/toy5.jpg",
+        "https://i.ibb.co/FnGJwD5/toy6.jpg",
+        "https://i.ibb.co/zJTx1ts/toy7.jpg",
+        "https://i.ibb.co/txRmxbv/toy8.jpg",
+        "https://i.ibb.co/ByNZHM3/toy9.jpg",
+        "https://i.ibb.co/jyds28F/nandhu-kumar-p2-Y2vmko-A8-U-unsplash.jpg",
+        "https://i.ibb.co/6ncq7z6/toy10.jpg",
+        "https://i.ibb.co/9ynQ7m8/toy5.jpg"
       ];
       
   const [selectedImage, setSelectedImage] = useState(null);
@@ -74,12 +75,14 @@ const GallerySection = () => {
             key={index}
             className="relative overflow-hidden bg-gray-200 rounded-lg shadow-md"
           >
+          <LazyLoad height={300}>
             <img
               src={image}
               alt={`Image ${index + 1}`}
               className="w-full h-full"
-              style={{objectFit: 'cover'}}
+              style={{objectFit: 'cover', height: '100%'}}
             />
+          </LazyLoad>
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200">
               <button
                 className="px-4 py-2 bg-secondary text-white rounded-lg"

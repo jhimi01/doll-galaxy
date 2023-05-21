@@ -61,12 +61,12 @@ const AddToys = () => {
            <h1 className="text-5xl my-5 text-center font-bold text-rose-400">Add Toys</h1>
              <form onSubmit={handleaddtoy} className="w-full md:w-3/4 mx-auto">
                <div className="flex mb-3 gap-3">
-                <input className="input-secondary  w-full input input-bordered" type="url" name="url" placeholder="toy url" />
-                <input className="input-secondary  w-full input input-bordered " type="text" name="name" placeholder="toy name" />
+                <input className="input-secondary  w-full input input-bordered" type="url" name="url" placeholder="toy url" required/>
+                <input className="input-secondary  w-full input input-bordered " type="text" name="name" placeholder="toy name" required/>
                </div>
                <div className="flex mb-3 gap-3">
-                <input className="input-secondary  w-full input input-bordered " value={user?.displayName} type="text" name="sellername" placeholder="seller name" />
-                <input className="input-secondary  w-full input input-bordered " value={user?.email} type="email" name="selleremial" placeholder="seller email" />
+                <input className="input-secondary  w-full input input-bordered " value={user?.displayName} type="text" name="sellername" placeholder="seller name" required/>
+                <input className="input-secondary  w-full input input-bordered " value={user?.email} type="email" name="selleremial" placeholder="seller email" required/>
                </div>
                <div className="flex mb-3 gap-3">
                <select
@@ -74,6 +74,7 @@ const AddToys = () => {
                   name="subcategory"
                   value={selectedSubcategory}
                   onChange={(e) => setSelectedSubcategory(e.target.value)}
+                  required
                 >
                   <option value="" disabled>
                     Select subcategory
@@ -82,13 +83,13 @@ const AddToys = () => {
                   <option className="text-gray-800" value="Barbie">Barbie</option>
                   <option className="text-gray-800" value="American girl">American girl</option>
                 </select>
-                <input className="input-secondary  w-full input input-bordered " type="text" name="price" placeholder="price" />
+                <input className="input-secondary  w-full input input-bordered " type="text" name="price" placeholder="price" required/>
                </div>
                <div className="flex mb-3 gap-3">
-                <input className="input-secondary  w-full input input-bordered " type="text" name="rating" placeholder="ratings" />
-                <input className="input-secondary  w-full input input-bordered " type="text" name="availablequality" placeholder="Available quantity" />
+                <input className="input-secondary  w-full input input-bordered " type="text" name="rating" placeholder="ratings" required/>
+                <input className="input-secondary  w-full input input-bordered " type="text" name="availablequality" placeholder="Available quantity" required/>
                </div>
-               <textarea name="details" placeholder="description" className="textarea textarea-secondary textarea-bordered w-full" ></textarea>
+               <textarea name="details" placeholder="description" className="textarea textarea-secondary textarea-bordered w-full" required></textarea>
               <div className="text-center">
               <input type="submit" className="btn px-5 mt-2 btn-secondary" />
               </div>

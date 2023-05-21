@@ -73,13 +73,13 @@ const Login = () => {
                  <label className="label">
                    <span className="label-text">Email</span>
                  </label>
-                 <input type="text" name="email" placeholder="email" className="input input-bordered" />
+                 <input type="text" name="email" placeholder="email" className="input input-bordered" required/>
                </div>
                <div className="form-control">
                  <label className="label">
                    <span className="label-text">Password</span>
                  </label>
-                 <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                 <input type="password" name="password" placeholder="password" className="input input-bordered" required/>
                 
                </div>
                <div className="form-control mt-6">
@@ -90,7 +90,7 @@ const Login = () => {
             </form>
             <div className="divider">OR</div>
             <button onClick={handleGoogle} className="btn btn-secondary" >Login with Google <FaGoogle className="text-xl text-rose-500 ml-2"/></button>
-            <input type="submit" value='' />
+            {/* <input type="submit" value='' /> */}
                <p>Are you new here? <Link to='/register'><span className='underline'>Register</span></Link></p>
              </div>
            </div>

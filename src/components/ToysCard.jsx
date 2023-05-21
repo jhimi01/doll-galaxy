@@ -7,7 +7,7 @@ const ToysCard = ({toy}) => {
     const {name, url, price, rating, _id} = toy;
     // console.log(toy)
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <div className="w-full rounded overflow-hidden shadow-lg">
         <img style={{height: '200px', objectFit:'cover'}}  className="w-full" src={url} alt="Product Image" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">Toy: {name}</div>

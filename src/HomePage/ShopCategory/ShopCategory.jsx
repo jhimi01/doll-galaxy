@@ -29,7 +29,7 @@ const ShopCategory = () => {
     // console.log(toys)
     
     return (
-        <div className='md:w-5/6 w-full px-3 md:px-0 mx-auto'>
+        <div className='md:w-5/6 w-full px-3 md:px-0 mx-auto mt-16'>
             <h1 className="text-center text-5xl text-rose-400 font-bold">Shop Category</h1>
             <div className="flex items-center justify-center w-1/2 mx-auto   my-10 ">
             <button
@@ -53,7 +53,7 @@ const ShopCategory = () => {
      
 </div>
 
-<div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
+<div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mb-28'>
   {
     toys.map((toy) => <ToysCard key={toy._id} toy={toy}></ToysCard>)
   }
