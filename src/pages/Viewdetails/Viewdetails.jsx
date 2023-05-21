@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
 const Viewdetails = () => {
+    
     const data  = useLoaderData();
     useTitle('View details');
     const { details, name, url, price, availablequality, rating, selleremial, sellername } = data
