@@ -1,17 +1,12 @@
 import { Link } from "react-router-dom";
 import useTitle from "../hooks/useTitle";
-import { useContext } from "react";
-import { AuthContext } from "../AuthPrvider/AuthProvider";
-import Swal from "sweetalert2";
+
+
 
 const ToysCard = ({toy}) => {
   // console.log(toy)
-  const { user } = useContext(AuthContext)
-  // if (user) {
-    
-  // }else{
-  //   Swal.fire('Any fool can use a computer')
-  // }
+ 
+ 
 
     const {name, url, price, rating, _id} = toy;
     // console.log(toy)
@@ -32,23 +27,7 @@ const ToysCard = ({toy}) => {
           <Link to={`/shopby/${_id}`}><button className="bg-rose-400 hover:bg-rose-300 text-white font-bold py-2 px-4 rounded-full">
             View Details
           </button></Link>
-          {/* {user ? (
-          <Link to={`/shopby/${_id}`}>
-            <button
-              className="bg-rose-400 hover:bg-rose-300 text-white font-bold py-2 px-4 rounded-full"
-             
-            >
-              View Details
-            </button>
-          </Link>
-        ) : (
-          <button
-            className="bg-rose-400 hover:bg-rose-300 text-white font-bold py-2 px-4 rounded-full"
-            onClick={() => Swal.fire("Any fool can use a computer")}
-          >
-            View Details
-          </button>
-        )} */}
+          
         </div>
      
       </div>
